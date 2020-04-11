@@ -25,6 +25,7 @@
         </repository>
     </repositories>
 
+
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -89,6 +90,8 @@
                 <artifactId>license-maven-plugin</artifactId>
             </plugin>
 
+
+
             <plugin>
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
@@ -109,4 +112,4 @@
             </plugin>
         </plugins>
     </build>
-</project>
+</project> 

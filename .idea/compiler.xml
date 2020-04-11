@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="snake-engine" />
+        <module name="snake-servers1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="snake-engine" target="1.5" />
+      <module name="snake-engine" target="1.8" />
+      <module name="snake-servers1" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
