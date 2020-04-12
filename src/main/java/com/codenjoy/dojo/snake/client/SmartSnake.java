@@ -33,9 +33,24 @@ public class SmartSnake {
   Direction solve() {
     if (gameOver) return Direction.UP;
 
-    // your code mus tbe here!
     Optional<List<LeePoint>> solution_apple = lee.trace(snake_head, apple, obstacles);
+    if (solution_apple.isPresent()) {
+      List<LeePoint> trace_to_apple = solution_apple.get();
+      System.out.printf("Green apple trace: %s\n",trace_to_apple);
+      LeePoint next_step = trace_to_apple.get(1);
+      return coord_to_direction(snake_head, next_step);
+      // TODO: check whether is possible to get the red after green
+    }
 
+    Optional<List<LeePoint>> solution_stone = lee.trace(snake_head, stone, obstacles);
+    if (solution_stone.isPresent()) {
+      List<LeePoint> trace_to_stone = solution_stone.get();
+      System.out.printf("Red stone trace: %s\n", trace_to_stone);
+      LeePoint next_step = trace_to_stone.get(1);
+      return coord_to_direction(snake_head, next_step);
+    }
+    // TODO try to implement unwind in free space
+    System.out.println("GOING TO DEATH, NO WAY EVEN TO RED STONE:");
     return Direction.UP;
   }
 
